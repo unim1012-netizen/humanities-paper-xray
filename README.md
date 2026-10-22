@@ -14,7 +14,8 @@
 ## 安装
 
 ```
-git clone https://github.com/Wang-auspicious/humanities-xray.git ~/.claude/skills/humanities-xray
+git clone git@github.com:unim1012-netizen/humanities-paper-xray.git ~/.claude/skills/humanities-xray
+# 或 HTTPS：git clone https://github.com/unim1012-netizen/humanities-paper-xray.git
 ```
 
 豆包工作（Doubao Work）等平台：把整个目录放进你的 skills 目录（如 `.user_skills/humanities-xray`），确认注册后即可调用。

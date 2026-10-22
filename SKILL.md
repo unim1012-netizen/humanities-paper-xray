@@ -16,7 +16,7 @@ argument-hint: "<PDF 路径 | 链接(PhilPapers/JSTOR/DOI) | 粘贴正文 | 一�
 **1. 更新检查**，每天最多一次。读 `<skill目录>/user/log.md` 第一行的**上次更新检查**日期，今天已经查过就跳过。
 
 - skill 目录是 git 仓库：执行 `git -C "<skill目录>" fetch -q origin`，再执行 `git -C "<skill目录>" rev-list --count HEAD..@{u}`。
-- 不是 git 仓库：执行 `curl -fsSL --max-time 5 https://raw.githubusercontent.com/Wang-auspicious/humanities-xray/master/VERSION`，和 `<skill目录>/VERSION` 比较。
+- 不是 git 仓库：执行 `curl -fsSL --max-time 5 https://raw.githubusercontent.com/unim1012-netizen/humanities-paper-xray/main/VERSION`，和 `<skill目录>/VERSION` 比较。
 
 如果落后，就在本次回复的第一行写一句：**humanities-xray 有新版本**，并附上更新命令（git 安装给 `git -C "<skill目录>" pull`，否则给仓库地址）。不自动更新。命令失败或没有网络就静默跳过。最后把今天的日期写回 log.md。
 
