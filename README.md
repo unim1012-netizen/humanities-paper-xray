@@ -1,8 +1,6 @@
 # humanities-paper-xray · 文科论文透视
 
-把一篇文科论文还原成它的**论证结构**，再按论文自己的章节顺序逐节精读。中文名**文科论文透视**；本地 skill 目录名 `humanities-xray`。
-
-fork 自 [paper-xray](https://github.com/Wang-auspicious/paper-xray)（面向工科论文的深读工具），为文科阅读习惯重写：不拆机制、不推公式，只做一件事——**把论证拆开重装，让你先看见骨架，再走进细节**。
+把一篇文科论文还原成它的**论证结构**，再按论文自己的章节顺序逐节精读。中文名**文科论文透视**；skill 名与 GitHub 仓库均为 `humanities-paper-xray`（本机豆包工作环境里的注册目录显示为 `humanities-xray`，属平台托管，以名称为准）。fork 自 [paper-xray](https://github.com/Wang-auspicious/paper-xray)（面向工科论文的深读工具），为文科阅读习惯重写：不拆机制、不推公式，只做一件事——**把论证拆开重装，让你先看见骨架，再走进细节**。
 
 ## 它做什么
 
@@ -10,11 +8,10 @@ fork 自 [paper-xray](https://github.com/Wang-auspicious/paper-xray)（面向工
 
 打开页面，先看到整篇论文的论证骨架，而不是一头扎进摘要复述：
 
-- **六要素**：Thesis（主张）→ Views（观点）→ Arguments（论证）→ Conclusion（结论）→ Possible Objections（可能反对意见）→ Responses（回应）。
+- **六要素骨架**：Thesis（主张）→ Views（观点）→ Arguments（论证）→ Conclusion（结论）→ Possible Objections（可能反对意见）→ Responses（回应）。
 - **主干视图**：thesis → views → conclusion 横向展开；一个 view 可以挂多个 argument，观点与论证紧密相连时合并为一个节点。
-- **论证链可展开**：每个 argument 展开后是前提-结论链（P1、P2…→ C），用自然语言呈现，不用形式逻辑符号。
-- **隐含前提补出**：论证有效必需的隐含前提补出来，标注【推断，依据：…】；补充的前提强度不超过原文立场。
-- **要素缺失不省略**：论文没有显式结论、没有回应反对意见时，地图上放【隐含】节点并写明依据——"作者没有回应任何反对意见"本身就是重要发现。
+- **论证链可展开**：每个 argument 展开为自然语言写的前提-结论链（不用形式逻辑符号），隐含前提补出并标注【推断，依据：…】。
+- **要素缺失不省略**：论文没写结论或没回应反对意见时，地图上放【隐含】节点并写明依据。
 - **反对意见分来源**：文中明说的（【文中明说】）与读者视角补充的（【读者补充】，最多 2-3 条且必须来自审读发现的真实弱点）分开标注。
 - **可交互**：节点点击跳转正文对应章节；每个节点可单独标记「不懂 / 已懂」，下次讲解从这里接着讲。
 
@@ -23,7 +20,7 @@ fork 自 [paper-xray](https://github.com/Wang-auspicious/paper-xray)（面向工
 正文**严格跟随论文自己的章节顺序**，不按讲解者的喜好重组：
 
 - 节标题用论文原标题（附中文译题），每节开头标注它承载哪个论证要素。
-- 每节五层递进：该节主张 → 支撑论证（前提-结论链）→ 关键概念 → 作者意图还原（带证据分级）→ 怀疑式审读（循环论证、稻草人、未证假设、概念偷换都当场指出）。
+- 每节五层递进：该节主张 → 支撑论证（前提-结论链）→ 关键概念 → 作者意图还原（带证据分级）→ 怀疑式审读（循环论证、稻草人、未证假设、概念偷换当场指出）。
 - 纯铺垫节轻处理，篇幅按论证密度分配，不按论文章节长度分配。
 
 ### 3. 四种论文类型分流
@@ -41,7 +38,7 @@ STS 厚描述论文并入论证型，每个论证额外标注证据来源（案�
 
 ### 4. 双语术语对照
 
-关键概念（核心术语、被论文定义过的概念、无稳定译法的概念）首次出现写「英文（中文译法）」；译法有争议时如实标注「译法不一：A/B」，拿不准的标「试译」，**不编造争议**。文末附概念对照表（英文、中文译法、首次出现位置、译法说明）。
+关键概念（核心术语、被论文定义过的概念、无稳定译法的概念）首次出现写「英文（中文译法）」；译法有争议时如实标注「译法不一：A/B」，拿不准的标「试译」，**不编造争议**。文末附概念对照表（英文、中文译法、首次出现位置、译法说明）。普通表达不双语化，避免噪音。
 
 ### 5. 写作启示
 
@@ -58,22 +55,22 @@ HTML 页面自带标注层，无需安装任何东西：
 ## 安装
 
 ```
-git clone git@github.com:unim1012-netizen/humanities-paper-xray.git ~/.claude/skills/humanities-xray
+git clone git@github.com:unim1012-netizen/humanities-paper-xray.git ~/.claude/skills/humanities-paper-xray
 # 或 HTTPS：git clone https://github.com/unim1012-netizen/humanities-paper-xray.git
 ```
 
-豆包工作（Doubao Work）等平台：把整个目录放进你的 skills 目录（如 `.user_skills/humanities-xray`），确认注册后即可调用。
+支持 Codex、Claude、Doubao 等平台：把整个目录放进你的 skills 目录（如 `.user_skills/humanities-paper-xray`），确认注册后即可调用。
 
 ## 使用
 
 ```
-/humanities-xray D:/papers/epistemic-injustice.pdf
-/humanities-xray https://philpapers.org/rec/XXXX html
-/humanities-xray 康德定言命令的论证结构 md
+/humanities-paper-xray D:/papers/epistemic-injustice.pdf
+/humanities-paper-xray https://philpapers.org/rec/XXXX html
+/humanities-paper-xray 康德定言命令的论证结构 md
 ```
 
 1. 提供材料：本地 PDF、链接（PhilPapers / JSTOR / DOI）或粘贴正文。
-2. 选格式：`md` 文字长文；`html` 交互可标注页面（推荐，含论证地图）。
+2. 选格式：`md` 文字长文，`html` 交互可标注页面（推荐，含论证地图）。
 3. 首次使用会问三个问题（领域熟悉度 / 阅读目的 / 论证分析水平），据此调整讲解深度；论文类型检测有歧义时会多问一次。
 
 ## 与 paper-xray 的关系
@@ -84,7 +81,7 @@ git clone git@github.com:unim1012-netizen/humanities-paper-xray.git ~/.claude/sk
 ## 目录结构
 
 ```
-humanities-xray/
+humanities-paper-xray/
 ├── SKILL.md            # 中文规格：工作流、四种模式、论证地图、双语术语、写作启示、读者档案
 ├── VERSION
 ├── references/
