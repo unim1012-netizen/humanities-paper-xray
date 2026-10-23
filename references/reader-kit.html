@@ -122,8 +122,11 @@ body.xr-annot main{cursor:text}
 .am-node:hover .am-ops,.am-node.am-fb .am-ops{opacity:1}
 .am-ops button{all:unset;cursor:pointer;font:12px var(--sans);color:var(--ink-tertiary);border:1px solid var(--line);border-radius:3px;padding:1px 8px}
 .am-ops button:hover{color:var(--ink);border-color:var(--ink-tertiary)}
-.am-node.am-fb-confused{border-color:var(--am-objection);background:color-mix(in srgb,var(--am-objection) 7%,var(--surface-raised))}
-.am-node.am-fb-known{border-color:var(--am-response);background:color-mix(in srgb,var(--am-response) 7%,var(--surface-raised))}
+.am-node.am-fb-confused{border-color:var(--am-objection);border-width:2px;background:color-mix(in srgb,var(--am-objection) 15%,var(--surface-raised))}
+.am-node.am-fb-known{border-color:var(--am-response);border-width:2px;background:color-mix(in srgb,var(--am-response) 15%,var(--surface-raised))}
+.am-fb-chip{display:none;font:600 11px var(--sans);color:#fff;border-radius:9px;padding:1px 8px;margin-left:6px;vertical-align:2px}
+.am-node.am-fb-confused .am-fb-chip.fb-confused{display:inline-block;background:var(--am-objection)}
+.am-node.am-fb-known .am-fb-chip.fb-known{display:inline-block;background:var(--am-response)}
 .am-prem{margin:6px 0 4px;padding-left:20px;font-size:13.5px;color:var(--ink)}
 .am-prem li{margin:2px 0}
 .am-conc{margin:4px 0;padding-left:8px;border-left:2px solid var(--am-conclusion);font-size:13.5px;font-weight:600;color:var(--ink)}
@@ -561,16 +564,8 @@ var AM = (function () {
         '<div class="am-conc">∴ ' + esc(L.conclusion) + ' · ' + esc(n.conclusion || '') + '</div>';
     }
     var ops = '<div class="am-ops"><button data-fb="confused" title="' + L.confused + '">' + L.confused + '</button><button data-fb="known" title="' + L.known + '">' + L.known + '</button></div>';
-    d.innerHTML = tag + label + metaHtml + prems + ops;
-    d.title = L.jump;
-    d.addEventListener('click', function (e) {
-      if (e.target.closest && e.target.closest('button')) return;
-      jumpTo(n.sec);
-    });
-    var btns = d.querySelectorAll('.am-ops button');
-    btns.forEach(function (b) {
-      b.addEventListener('click', function (e) { e.stopPropagation(); if (window.XRAY) XRAY.addNodeMark(n.id, b.getAttribute('data-fb')); });
-    });
+    var chip = '<span class="am-fb-chip fb-confused">' + L.confused + '</span><span class="am-fb-chip fb-known">' + L.known + '</span>';
+    d.innerHTML = tag + chip + label + metaHtml + prems + ops;
     return d;
   }
   function childrenOf(id, kind) {
@@ -604,6 +599,14 @@ var AM = (function () {
       html += '</div></div>';
     }
     host.innerHTML = html;
+    $$('.am-node', host).forEach(function (d) {
+      var n = byId[d.getAttribute('data-node')]; if (!n) return;
+      d.title = L.jump;
+      d.addEventListener('click', function (e) { if (e.target.closest && e.target.closest('button')) return; jumpTo(n.sec); });
+      $$('.am-ops button', d).forEach(function (b) {
+        b.addEventListener('click', function (e) { e.stopPropagation(); if (window.XRAY) XRAY.addNodeMark(n.id, b.getAttribute('data-fb')); });
+      });
+    });
     restore();
   }
   function restore() {

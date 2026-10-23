@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""Assemble humanities-xray structure demo from the kit blocks (block-faithful)."""
+"""Assemble humanities-paper-xray structure demo from the kit blocks (block-faithful)."""
 import re, pathlib
 
-KIT = pathlib.Path("/Users/willowwang/Library/Application Support/DoubaoWork/Profile 3/.doubaowork/agent_mode/workspace/.user_skills/humanities-xray/references/reader-kit.html")
-OUT = pathlib.Path("/Users/willowwang/Library/Application Support/DoubaoWork/Profile 3/.doubaowork/agent_mode/workspace/.user_skills/humanities-xray/demos/structure-demo/structure-demo.html")
+KIT = pathlib.Path("/Users/willowwang/Library/Application Support/DoubaoWork/Profile 3/.doubaowork/agent_mode/workspace/.user_skills/humanities-paper-xray/references/reader-kit.html")
+OUT = pathlib.Path("/Users/willowwang/Library/Application Support/DoubaoWork/Profile 3/.doubaowork/agent_mode/workspace/.user_skills/humanities-paper-xray/demos/structure-demo/structure-demo.html")
 
 kit = KIT.read_text(encoding="utf-8")
 start_marker = "<!-- ===== XRAY BODY TOP END ===== -->"
@@ -12,9 +12,9 @@ end_marker = "<!-- ===== XRAY BODY BOTTOM START: copy whole block ===== -->"
 head = kit.split(start_marker)[0] + start_marker
 tail = end_marker + kit.split(end_marker)[1]
 
-BODY = """<h1>结构演示：一个示意性论证的 X 光</h1>
+BODY = """<h1>结构演示：论证地图与按章节精读（示意内容）</h1>
 <div class="info"><span class="k">论文</span><b>An Example Argument（示意论文，非真实文献）</b><br><span class="k">作者</span>A. Demo（示意）<br><span class="k">出处</span>示意 · 仅用于演示页面结构<br><span class="k">类型</span>论证型<br><span class="k">核心洞见</span>认知活动的社会性维度不可回避（示意）。</div>
-<div class="note"><b>读法</b>这是 humanities-xray 的结构演示：先读论证地图把握骨架，再按论文自己的章节顺序精读。地图节点可点击跳到正文，节点上的「不懂 / 已懂」可单独标记论证环节。</div>
+<div class="note"><b>读法</b>这是 humanities-paper-xray 的结构演示：先读论证地图把握骨架，再按论文自己的章节顺序精读。地图节点可点击跳到正文，节点上的「不懂 / 已懂」可单独标记论证环节。</div>
 
 <h2 id="sec-map">论证地图</h2>
 <div class="am" id="am"></div>
@@ -63,7 +63,7 @@ BODY = """<h1>结构演示：一个示意性论证的 X 光</h1>
 </ol>
 """
 
-NOTES = '{"v":1,"doc":{"title":"结构演示：一个示意性论证的 X 光","source":"An Example Argument（示意论文）","made":"2026-10-22","lang":"zh","file":"/Users/willowwang/Library/Application Support/DoubaoWork/Profile 3/.doubaowork/agent_mode/workspace/.user_skills/humanities-xray/demos/structure-demo/structure-demo.html"},"marks":[],"folds":[],"updated":null,"saved":null}'
+NOTES = '{"v":1,"doc":{"title":"结构演示：论证地图与按章节精读（示意内容）","source":"An Example Argument（示意论文）","made":"2026-10-22","lang":"zh","file":"/Users/willowwang/Library/Application Support/DoubaoWork/Profile 3/.doubaowork/agent_mode/workspace/.user_skills/humanities-paper-xray/demos/structure-demo/structure-demo.html"},"marks":[],"folds":[],"updated":null,"saved":null}'
 
 AMCFG = '{"v":1,"title":"论证地图","trunk":["T1","V1","V2","C1"],"nodes":[' \
 '{"id":"T1","kind":"thesis","label":"认知活动的社会性维度不可回避","src":"text","page":"2","sec":"sec-1","secLabel":"1"},' \

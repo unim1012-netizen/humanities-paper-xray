@@ -122,8 +122,11 @@ body.xr-annot main{cursor:text}
 .am-node:hover .am-ops,.am-node.am-fb .am-ops{opacity:1}
 .am-ops button{all:unset;cursor:pointer;font:12px var(--sans);color:var(--ink-tertiary);border:1px solid var(--line);border-radius:3px;padding:1px 8px}
 .am-ops button:hover{color:var(--ink);border-color:var(--ink-tertiary)}
-.am-node.am-fb-confused{border-color:var(--am-objection);background:color-mix(in srgb,var(--am-objection) 7%,var(--surface-raised))}
-.am-node.am-fb-known{border-color:var(--am-response);background:color-mix(in srgb,var(--am-response) 7%,var(--surface-raised))}
+.am-node.am-fb-confused{border-color:var(--am-objection);border-width:2px;background:color-mix(in srgb,var(--am-objection) 15%,var(--surface-raised))}
+.am-node.am-fb-known{border-color:var(--am-response);border-width:2px;background:color-mix(in srgb,var(--am-response) 15%,var(--surface-raised))}
+.am-fb-chip{display:none;font:600 11px var(--sans);color:#fff;border-radius:9px;padding:1px 8px;margin-left:6px;vertical-align:2px}
+.am-node.am-fb-confused .am-fb-chip.fb-confused{display:inline-block;background:var(--am-objection)}
+.am-node.am-fb-known .am-fb-chip.fb-known{display:inline-block;background:var(--am-response)}
 .am-prem{margin:6px 0 4px;padding-left:20px;font-size:13.5px;color:var(--ink)}
 .am-prem li{margin:2px 0}
 .am-conc{margin:4px 0;padding-left:8px;border-left:2px solid var(--am-conclusion);font-size:13.5px;font-weight:600;color:var(--ink)}
@@ -164,9 +167,9 @@ body.xr-annot main{cursor:text}
 <nav class="toc" aria-label="contents"></nav>
 <main id="doc">
 <!-- ===== XRAY BODY TOP END ===== -->
-<h1>结构演示：一个示意性论证的 X 光</h1>
+<h1>结构演示：论证地图与按章节精读（示意内容）</h1>
 <div class="info"><span class="k">论文</span><b>An Example Argument（示意论文，非真实文献）</b><br><span class="k">作者</span>A. Demo（示意）<br><span class="k">出处</span>示意 · 仅用于演示页面结构<br><span class="k">类型</span>论证型<br><span class="k">核心洞见</span>认知活动的社会性维度不可回避（示意）。</div>
-<div class="note"><b>读法</b>这是 humanities-xray 的结构演示：先读论证地图把握骨架，再按论文自己的章节顺序精读。地图节点可点击跳到正文，节点上的「不懂 / 已懂」可单独标记论证环节。</div>
+<div class="note"><b>读法</b>这是 humanities-paper-xray 的结构演示：先读论证地图把握骨架，再按论文自己的章节顺序精读。地图节点可点击跳到正文，节点上的「不懂 / 已懂」可单独标记论证环节。</div>
 
 <h2 id="sec-map">论证地图</h2>
 <div class="am" id="am"></div>
@@ -217,7 +220,7 @@ body.xr-annot main{cursor:text}
 <!-- ===== XRAY BODY BOTTOM START: copy whole block ===== -->
 </main>
 </div>
-<script type="application/json" id="xray-notes">{"v":1,"doc":{"title":"结构演示：一个示意性论证的 X 光","source":"An Example Argument（示意论文）","made":"2026-10-22","lang":"zh","file":"/Users/willowwang/Library/Application Support/DoubaoWork/Profile 3/.doubaowork/agent_mode/workspace/.user_skills/humanities-xray/demos/structure-demo/structure-demo.html"},"marks":[],"folds":[],"updated":null,"saved":null}</script>
+<script type="application/json" id="xray-notes">{"v":1,"doc":{"title":"结构演示：论证地图与按章节精读（示意内容）","source":"An Example Argument（示意论文）","made":"2026-10-22","lang":"zh","file":"/Users/willowwang/Library/Application Support/DoubaoWork/Profile 3/.doubaowork/agent_mode/workspace/.user_skills/humanities-paper-xray/demos/structure-demo/structure-demo.html"},"marks":[],"folds":[],"updated":null,"saved":null}</script>
 <script type="application/json" id="xray-am">{"v":1,"title":"论证地图","trunk":["T1","V1","V2","C1"],"nodes":[{"id":"T1","kind":"thesis","label":"认知活动的社会性维度不可回避","src":"text","page":"2","sec":"sec-1","secLabel":"1"},{"id":"V1","kind":"view","label":"观点一：社会性维度至少是必要的","src":"text","sec":"sec-2","secLabel":"2"},{"id":"A1","kind":"argument","label":"论证 A1：从铺垫到区分","premises":["P1 前提一（示意）","P2 概念区分（示意）"],"conclusion":"观点一成立（示意）","src":"text","grade":"文中有据","page":"4","sec":"sec-2"},{"id":"V2","kind":"view","label":"观点二：社会性维度还是构成性的","src":"text","sec":"sec-3","secLabel":"3"},{"id":"A2","kind":"argument","label":"论证 A2：从观点一到更强结论","premises":["P1 沿用论证 A1 的结论（示意）","P2 经验假设（示意）"],"conclusion":"观点二成立（示意）","src":"text","grade":"推断","page":"7","sec":"sec-3"},{"id":"C1","kind":"conclusion","label":"结论：回到 thesis，论证成立","src":"text","sec":"sec-5","secLabel":"5"},{"id":"O1","kind":"objection","label":"反对意见：区分不成立","src":"text","response":"R1","page":"9","sec":"sec-4"},{"id":"R1","kind":"response","label":"区分经反例检验后仍成立","src":"text","sec":"sec-4"},{"id":"O2","kind":"objection","label":"读者补充：经验假设未证","src":"reader","response":"R2","sec":"sec-4"},{"id":"R2","kind":"response","label":"可进一步检验（读者视角）","src":"reader","sec":"sec-4"}],"edges":[{"from":"T1","to":"V1","rel":"support"},{"from":"T1","to":"V2","rel":"support"},{"from":"V1","to":"A1","rel":"support"},{"from":"V2","to":"A2","rel":"support"},{"from":"V1","to":"C1","rel":"leadto"},{"from":"V2","to":"C1","rel":"leadto"}]}</script>
 <script>
 /* ===== XRAY JS START: copy whole block ===== */
@@ -582,16 +585,8 @@ var AM = (function () {
         '<div class="am-conc">∴ ' + esc(L.conclusion) + ' · ' + esc(n.conclusion || '') + '</div>';
     }
     var ops = '<div class="am-ops"><button data-fb="confused" title="' + L.confused + '">' + L.confused + '</button><button data-fb="known" title="' + L.known + '">' + L.known + '</button></div>';
-    d.innerHTML = tag + label + metaHtml + prems + ops;
-    d.title = L.jump;
-    d.addEventListener('click', function (e) {
-      if (e.target.closest && e.target.closest('button')) return;
-      jumpTo(n.sec);
-    });
-    var btns = d.querySelectorAll('.am-ops button');
-    btns.forEach(function (b) {
-      b.addEventListener('click', function (e) { e.stopPropagation(); if (window.XRAY) XRAY.addNodeMark(n.id, b.getAttribute('data-fb')); });
-    });
+    var chip = '<span class="am-fb-chip fb-confused">' + L.confused + '</span><span class="am-fb-chip fb-known">' + L.known + '</span>';
+    d.innerHTML = tag + chip + label + metaHtml + prems + ops;
     return d;
   }
   function childrenOf(id, kind) {
@@ -625,6 +620,14 @@ var AM = (function () {
       html += '</div></div>';
     }
     host.innerHTML = html;
+    $$('.am-node', host).forEach(function (d) {
+      var n = byId[d.getAttribute('data-node')]; if (!n) return;
+      d.title = L.jump;
+      d.addEventListener('click', function (e) { if (e.target.closest && e.target.closest('button')) return; jumpTo(n.sec); });
+      $$('.am-ops button', d).forEach(function (b) {
+        b.addEventListener('click', function (e) { e.stopPropagation(); if (window.XRAY) XRAY.addNodeMark(n.id, b.getAttribute('data-fb')); });
+      });
+    });
     restore();
   }
   function restore() {

@@ -1,6 +1,6 @@
 ---
-name: humanities-xray
-description: "文科论文 X 光：把一篇文科论文（哲学、历史、文学、政治理论等）还原成它的论证结构——thesis、view、argument、conclusion、objection、reply——再按论文自己的章节顺序逐节精读；综述与考据解释两种专用模式；关键概念中英对照；交付可标注 HTML 或 MD。Explain one humanities paper the way a careful reader in the field would: the argument skeleton first, then a section-by-section close read following the paper's own order, with bilingual key terms and an annotatable HTML page."
+name: humanities-paper-xray
+description: "文科论文透视：把一篇文科论文（哲学、历史、文学、政治理论等）还原成它的论证结构——thesis、view、argument、conclusion、objection、reply——再按论文自己的章节顺序逐节精读；综述与考据解释两种专用模式；关键概念中英对照；交付可标注 HTML 或 MD。Explain one humanities paper the way a careful reader in the field would: the argument skeleton first, then a section-by-section close read following the paper's own order, with bilingual key terms and an annotatable HTML page."
 argument-hint: "<PDF 路径 | 链接(PhilPapers/JSTOR/DOI) | 粘贴正文 | 一个主题> [md|html]"
 ---
 
@@ -18,7 +18,7 @@ argument-hint: "<PDF 路径 | 链接(PhilPapers/JSTOR/DOI) | 粘贴正文 | 一�
 - skill 目录是 git 仓库：执行 `git -C "<skill目录>" fetch -q origin`，再执行 `git -C "<skill目录>" rev-list --count HEAD..@{u}`。
 - 不是 git 仓库：执行 `curl -fsSL --max-time 5 https://raw.githubusercontent.com/unim1012-netizen/humanities-paper-xray/main/VERSION`，和 `<skill目录>/VERSION` 比较。
 
-如果落后，就在本次回复的第一行写一句：**humanities-xray 有新版本**，并附上更新命令（git 安装给 `git -C "<skill目录>" pull`，否则给仓库地址）。不自动更新。命令失败或没有网络就静默跳过。最后把今天的日期写回 log.md。
+如果落后，就在本次回复的第一行写一句：**humanities-paper-xray 有新版本**，并附上更新命令（git 安装给 `git -C "<skill目录>" pull`，否则给仓库地址）。不自动更新。命令失败或没有网络就静默跳过。最后把今天的日期写回 log.md。
 
 **2. 读者档案**：读 `<skill目录>/user/profile.md`。文件不存在时，按本文件末尾 `<reader_profile>` 里的模板创建 `user/` 目录、profile.md 和 log.md。档案的**基础**三项里有空的，就在拿到材料、看过摘要之后弹首次问卷（见 `<reader_profile>`）。问卷只在基础为空时出现一次。
 
@@ -386,7 +386,7 @@ MD 同结构：论证地图降级为缩进文本树（缩进表示支撑关系�
 
 ```markdown
 # 读者档案
-<!-- humanities-xray 自动维护，可以手改。 -->
+<!-- humanities-paper-xray 自动维护，可以手改。 -->
 
 ## 基础
 - 领域熟悉度：
