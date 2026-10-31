@@ -1,4 +1,4 @@
-# humanities-paper-xray · 文科论文透视
+# humanities-paper-xray
 
 把一篇文科论文还原成它的**论证结构**，再按论文自己的章节顺序逐节精读。中文名**文科论文透视**；skill 名与 GitHub 仓库均为 `humanities-paper-xray`（本机豆包工作环境里的注册目录显示为 `humanities-xray`，属平台托管，以名称为准）。
 
